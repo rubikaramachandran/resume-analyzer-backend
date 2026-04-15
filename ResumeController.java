@@ -5,9 +5,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
-@CrossOrigin
+@CrossOrigin(
+    origins = "*",
+    allowedHeaders = "*",
+    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}
+)
 public class ResumeController {
 
     @PostMapping("/analyze")
